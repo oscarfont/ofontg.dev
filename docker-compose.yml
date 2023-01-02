@@ -2,7 +2,7 @@ version: "3"
 
 services:
   personalweb:
-    image: personalweb:latest
+    image: ofontgg/personalweb:latest
     expose:
       - "4200"
     #ports: FOR PROD
@@ -12,7 +12,7 @@ services:
       - personalweb-backend
   
   personalweb-backend:
-    image: personalweb-backend:latest
+    image: ofontgg/personalweb-backend:latest
     expose:
       - "3000"
     
