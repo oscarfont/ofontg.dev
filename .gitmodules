@@ -1,0 +1,6 @@
+[submodule "personalweb"]
+	path = personalweb
+	url = https://github.com/oscarfont/personalweb
+[submodule "personalweb-backend"]
+	path = personalweb-backend
+	url = https://github.com/oscarfont/personalweb-backend
