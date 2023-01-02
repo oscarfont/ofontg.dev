@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  personalweb:
+    image: personalweb:latest
+    expose:
+      - "4200"
+    #ports: FOR PROD
+    # - "80:4200"
+    # - "443:4200"
+    depends_on:
+      - personalweb-backend
+  
+  personalweb-backend:
+    image: personalweb-backend:latest
+    expose:
+      - "3000"
+    
