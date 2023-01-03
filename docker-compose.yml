@@ -8,6 +8,14 @@ services:
     ports:
      - "80:4200"
      - "443:4200"
+    restart: always
+    volumes:
+      - ./certbot/www:/var/www/certbot/:ro
+    certbot:
+      image: certbot/certbot:latest
+      volumes:
+        - ./certbot/www/:/var/www/certbot/:rw
+        - ./certbot/conf/:/etc/letsencrypt/:rw
     depends_on:
       - personalweb-backend
   
