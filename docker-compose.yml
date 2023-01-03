@@ -10,7 +10,7 @@ services:
      - "443:4200"
     restart: always
     volumes:
-      - /etc/letsencrypt/live/ofontg.dev/:/etc/letsencrypt/live/ofontg.dev/:ro
+      - /etc/letsencrypt:/etc/letsencrypt
     depends_on:
       - personalweb-backend
   
@@ -18,4 +18,3 @@ services:
     image: ofontgg/personalweb-backend:latest
     expose:
       - "3000"
-    
