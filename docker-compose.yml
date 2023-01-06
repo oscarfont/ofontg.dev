@@ -8,13 +8,30 @@ services:
     ports:
      - "80:4200"
      - "443:4200"
-    restart: always
+    restart: unless-stopped
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt
     depends_on:
       - personalweb-backend
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
   
   personalweb-backend:
     image: ofontgg/personalweb-backend:latest
     expose:
       - "3000"
+    restart: unless-stopped
+    labels:
+    - "com.centurylinklabs.watchtower.enable=true"
+  
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_LABEL_ENABLE=true
+      - WATCHTOWER_INCLUDE_RESTARTING=true
+    command: --interval 30
+    labels:
+    - "com.centurylinklabs.watchtower.enable=true"
