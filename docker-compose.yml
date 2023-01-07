@@ -18,6 +18,8 @@ services:
   
   personalweb-backend:
     image: ofontgg/personalweb-backend:latest
+    env_file:
+      .env
     expose:
       - "3000"
     restart: unless-stopped
@@ -33,5 +35,3 @@ services:
       - WATCHTOWER_LABEL_ENABLE=true
       - WATCHTOWER_INCLUDE_RESTARTING=true
     command: --interval 30
-    labels:
-    - "com.centurylinklabs.watchtower.enable=true"
