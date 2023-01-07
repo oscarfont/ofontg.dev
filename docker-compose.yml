@@ -19,7 +19,7 @@ services:
   personalweb-backend:
     image: ofontgg/personalweb-backend:latest
     env_file:
-      .env
+      ./personalweb-backend/.env
     expose:
       - "3000"
     restart: unless-stopped
