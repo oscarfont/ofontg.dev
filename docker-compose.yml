@@ -20,6 +20,8 @@ services:
     image: ofontgg/personalweb-backend:latest
     env_file:
       ./personalweb-backend/.env
+    volumes:
+      - ./personalweb-backend/adapters/database/data/:./data
     expose:
       - "3000"
     restart: unless-stopped
