@@ -21,7 +21,7 @@ services:
     env_file:
       ./personalweb-backend/.env
     volumes:
-      - ./personalweb-backend/adapters/database/data/:./data
+      - /personalweb-backend/adapters/database/data:/home/ubuntu/ofontg.dev/data
     expose:
       - "3000"
     restart: unless-stopped
