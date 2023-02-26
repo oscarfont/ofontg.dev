@@ -22,8 +22,8 @@ services:
       ./personalweb-backend/.env
     volumes:
       - type: bind
-        source: /personalweb-backend/adapters/database/db.json
-        target: /home/ubuntu/ofontg.dev/data/db.json
+        source: /home/ubuntu/ofontg.dev/data/db.json
+        target: /personalweb-backend/adapters/database/db.json
     expose:
       - "3000"
     restart: unless-stopped
