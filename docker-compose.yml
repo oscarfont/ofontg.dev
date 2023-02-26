@@ -21,7 +21,7 @@ services:
     env_file:
       ./personalweb-backend/.env
     volumes:
-      - ./data:/personalweb-backend/adapters/database
+      - ./data:/personalweb-backend/adapters/database/data
     expose:
       - "3000"
     restart: unless-stopped
