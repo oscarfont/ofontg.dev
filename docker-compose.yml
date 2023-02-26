@@ -22,7 +22,7 @@ services:
       ./personalweb-backend/.env
     volumes:
       - type: volume
-        source: /home/ubuntu/ofontg.dev/data
+        source: ./data
         target: /personalweb-backend/adapters/database
     expose:
       - "3000"
